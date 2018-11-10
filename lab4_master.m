@@ -5,8 +5,8 @@ close all
 %% input system parameters
 global Rw Lw Tm M bt R Gr Cr g Cd rho Af n vi uinss Fb
 
-uinss = 12 % SOME INITIAL VOLTAGE VALUE
-Fb= 5 %Friction value!!!!! WhOOMP
+uinss = 12; % SOME INITIAL VOLTAGE VALUE
+Fb= 5; %Friction value!!!!! WhOOMP
 
 Rw = 0.3; %Ohms
 Lw = 0.015; %Henrys
@@ -25,8 +25,8 @@ vi = 20; %m/s initial vehicle speed
 
 
 
-p_3in = ;
-p_9in = ;
+p_3in = 0;
+p_9in = 0;
 
 
 

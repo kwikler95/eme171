@@ -6,7 +6,7 @@ global Rw Lw Tm M bt R Gr Cr g Cd rho Af n vi uinss Fb
 
 % renaming variables for clarity
 p_3 = s(1);
-p_9 = s(2);
+p_9 = s(2); 
 
 % define u_in and Fb time
 T1=0.5;
@@ -29,9 +29,9 @@ end
 
 
 % input specs
-SE1 = mcr*g;
-SE2 = mtr*g;
-SE3 = mtf*g;
+% SE1 = mcr*g;
+% SE2 = mtr*g;
+% SE3 = mtf*g;
 
 % non linear efforts
 e11 = 0.5*rho*Af*Cd*v^2;
