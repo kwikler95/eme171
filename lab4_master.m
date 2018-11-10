@@ -3,7 +3,7 @@ clear all
 close all
 
 %% input system parameters
-global Rw Lw Tm M bt R Gr Cr g Cd rho Af n
+global Rw Lw Tm M bt R Gr Cr g Cd rho Af n vi
 
 Rw = 0.3; %Ohms
 Lw = 0.015; %Henrys
@@ -31,7 +31,7 @@ p_9in = ;
 initial = [p_3in p_9in]; 
 
 % setup time array
-tspan = linspace(0,5,1989); 
+tspan = linspace(0,5,2000); 
 
 % call ODE solver
 [t, s] = ode45(@lab4_eqns,tspan,initial);
@@ -46,9 +46,9 @@ for i = 1:length(t)
 end
 
 %% max bump height
-max_bump =  max(s(:,3)-qsfIN);
-const = max_bump/A;
-Amax = 0.1/const;
+% max_bump =  max(s(:,3)-qsfIN);
+% const = max_bump/A;
+% Amax = 0.1/const;
 
 %% Plot Figures
 
@@ -59,18 +59,19 @@ legend('Front Wheel','Back Wheel')
 ylabel('Amplitude (m)')
 xlabel('time (s)')
 
-figure('Name','Pitch Angular Velocity','NumberTitle','off','Color','white')
-plot(t,s(:,1)./jcr,'k'), grid on
-title('Pitch Angular Velocity, Forward Configuration')
-legend('Pitch angular velocity')
-ylabel('Angular velocity (rad/s)')
-xlabel('time (s)')
-
-figure('Name','Heave Velocity','NumberTitle','off','Color','white')
-plot(t,s(:,2)./mcr,'k'), grid on
-title('Heave Velocity, Forward Configuration')
-legend('Heave velocity')
-ylabel('Heave velocity (m/s)')
-xlabel('time (s)')
+% 
+% figure('Name','Pitch Angular Velocity','NumberTitle','off','Color','white')
+% plot(t,s(:,1)./jcr,'k'), grid on
+% title('Pitch Angular Velocity, Forward Configuration')
+% legend('Pitch angular velocity')
+% ylabel('Angular velocity (rad/s)')
+% xlabel('time (s)')
+% 
+% figure('Name','Heave Velocity','NumberTitle','off','Color','white')
+% plot(t,s(:,2)./mcr,'k'), grid on
+% title('Heave Velocity, Forward Configuration')
+% legend('Heave velocity')
+% ylabel('Heave velocity (m/s)')
+% xlabel('time (s)')
 
 

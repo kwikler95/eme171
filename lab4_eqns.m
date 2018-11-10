@@ -2,7 +2,7 @@
 function [ds, ext] = lab4_eqns(t,s)
 
 % input system parameters
-global Rw Lw Tm M bt R Gr Cr g Cd rho Af n 
+global Rw Lw Tm M bt R Gr Cr g Cd rho Af n vi
 
 % renaming variables for clarity
 p_3 = s(1);
@@ -20,6 +20,7 @@ SE1 = mcr*g;
 SE2 = mtr*g;
 SE3 = mtf*g;
 
+% non linear efforts
 e11 = 0.5*rho*Af*Cd*v^2;
 e12 = M*g*Cr*(v/(abs(v)+n));
 
