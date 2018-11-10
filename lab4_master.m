@@ -3,7 +3,10 @@ clear all
 close all
 
 %% input system parameters
-global Rw Lw Tm M bt R Gr Cr g Cd rho Af n vi
+global Rw Lw Tm M bt R Gr Cr g Cd rho Af n vi uinss Fb
+
+uinss = 12 % SOME INITIAL VOLTAGE VALUE
+Fb= 5 %Friction value!!!!! WhOOMP
 
 Rw = 0.3; %Ohms
 Lw = 0.015; %Henrys
@@ -18,8 +21,10 @@ Cd = 0.32; %drag coefficient
 rho = 1.21; %kg/m^3, air density
 Af = 2.05; %m^2 vehicle frontal area
 n = 0.0001; 
-
 vi = 20; %m/s initial vehicle speed
+
+
+
 p_3in = ;
 p_9in = ;
 
@@ -31,7 +36,7 @@ p_9in = ;
 initial = [p_3in p_9in]; 
 
 % setup time array
-tspan = linspace(0,5,2000); 
+tspan = linspace(0,3,2000); 
 
 % call ODE solver
 [t, s] = ode45(@lab4_eqns,tspan,initial);

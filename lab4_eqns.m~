@@ -39,7 +39,7 @@ e12 = M*g*Cr*(v/(abs(v)+n));
 
 % eqns of motion 
 p_dot3 = u_in - (p_3/Lw)*Rw - Tm*(Gr/R)*(p_9/M);
-p_dot9 = (Gr/R)*(-bt*(Gr/R)*(p_9/M) + Tm*(p_3/Lw)) - e12 - e11 - fb;
+p_dot9 = (Gr/R)*(-bt*(Gr/R)*(p_9/M) + Tm*(p_3/Lw)) - e12 - e11 - Fb;
 
 
 % defining extra variables for output
