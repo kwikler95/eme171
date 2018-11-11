@@ -31,7 +31,7 @@ end
 % friction brake input
 
 % non linear efforts
-v=p_9/M; %car velocity
+v=p_9/M
 
 e11 = 0.5*rho*Af*Cd*v*v/(abs(v)+n);
 e12 = M*g*Cr*(v/(abs(v)+n));
