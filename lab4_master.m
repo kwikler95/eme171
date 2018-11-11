@@ -25,7 +25,7 @@ im = 0; %initial currrent in recharging circuit
 
 p_3in = Lw*im; %initial inductor momentum
 p_9in = M*vi; %initial car momentum
-uinss = p_3in/Lw*Rw+Tm*Gr/R*p_9in/M;
+uinss = im*Rw+Tm*Gr/R*vi;
 
 
 %% Run ODE45 Solver 
@@ -51,7 +51,7 @@ end
 
 %% current
 
-current=ext(:,1)*Lw;
+current=-ext(:,1)/Lw;
 
 %% Plot Figures
 
