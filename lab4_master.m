@@ -5,7 +5,7 @@ close all
 %% input system parameters
 global Rw Lw Tm M bt R Gr Cr g Cd rho Af n vi uinss Fb im p_3in p_9in 
 
-Fb= 000; %Friction value -N-!!!!! WhOOMP
+Fb= 1000; %Friction value -N-!!!!! WhOOMP
 
 Rw = 0.3; %Ohms
 Lw = 0.015; %Henrys
