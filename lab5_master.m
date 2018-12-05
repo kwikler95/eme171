@@ -7,7 +7,7 @@ global Rw Lw Tm M bt R Gr Cr g Cd rho Af n vi uinss Fb im p_3in p_9in Kp Ki
 
 Fb= 25000; %Friction value 
 
-Rw = 0.3; %Ohms
+Rw = 0.5; %Ohms
 Lw = 0.015; %Henrys
 Tm = 1.718; %Webers
 M = 2200; %kg, vehicle mass
@@ -57,19 +57,15 @@ end
 
 A = [(-Rw/Lw) -(Tm*Gr)/(R*M); (Tm*Gr)/(R*Lw) -(bt*Gr^2)/(M*R^2)];
 B = [1;0];
-C = [0;1/M];
+C = [0 1/M];
 D = [0];
 
 s = tf('s');
 I = eye(2);
 
-p = (s*I - A)^-1;
-
-TF = C*p*B + D;
+TF = C*inv(s*I - A)*B + D;
 figure
 bode(TF)
-
-
 
 %% Plot Figures
 
@@ -87,10 +83,3 @@ title('Actual Velocity Profile')
 legend('Actual Velocity')
 ylabel('Speed (m/s)')
 xlabel('Time (s)')
-% 
-% figure('Name','current','NumberTitle','off','Color','white')
-% plot(t,current,'k'), grid on
-% title('Current vs Time')
-% legend('Current')
-% ylabel('Current (Amps)')
-% xlabel('Time (s)')
